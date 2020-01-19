@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="content">
+<div class="jumbotron">
+  
+  <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">Hello! Welcome to the Password Generator! Below are a list of variables to formulate your custom password.</p>
+        <hr class="my-4">
+        <p>Please choose from the provided options</p>
+        <!--options  -->
+   <div class="form-check">
+    <input class="form-check-input" type="checkbox"  id="upperLetters">
+      <label class="form-check-label" for="defaultCheck1">
+        A-Z
+      </label>
+   </div>
+   <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="lowerLetters">
+      <label class="form-check-label" for="defaultCheck1">
+        a-z
+      </label>
+   </div>
+              
+   <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="numbers">
+      <label class="form-check-label" for="defaultCheck1">
+        1-9
+      </label>
+   </div>
+   <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="symbols">
+      <label class="form-check-label" for="defaultCheck1">
+        Symbols
+      </label> 
+   </div>
+   
+<br>
+   <!-- buttons -->
+   <input  class="output" type="text" id="passW" value = "">
+   <br>
+   <!-- copy button -->
+
+<button class="copybtn" onclick="copyFunction()">Copy Password</button>
+
+   <!--Generate button  -->
+<button class="genbtn" onclick="newMakeId(length.value)" class="gen">
+<p>Generate</p>
+</button>
+</div>
+  </div>
+<script>
+    // copy function
+var passW = document.getElementById("passW");
+function copyFunction() {
+    var copyText = document.getElementById("passW");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied password!: " + copyText.value);
+  }
+
+
+
+//  Generate function
+
+
+  
+
+function newMakeId(length) {
+var chars = "";
+var result = "";
+var length = 10;
+var uppperLetters = document.getElementById('upperLetters').checked;
+var lowerLetters = document.getElementById('lowerLetters').checked;
+var numbers = document.getElementById('numbers').checked;
+var symbols = document.getElementById('symbols').checked;
+
+if (upperLetters) {
+  chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+}
+
+if (lowerLetters) {
+  chars += 'abcdefghijklmnopqrtuvwxyz';
+}
+
+if (numbers) {
+  chars += '1234567890';
+}
+
+if (symbols) {
+  chars += '!@#$%^&*()_';
+}
+
+while (result.length < length ) {
+  var newMakeId = Math.floor(Math.random() * chars.length);
+result += chars[newMakeId];
+}
+
+document.getElementById("passW").value = result;
+}
+
+
+// Dark/Light mode
+var themeSwitcher = document.querySelector("#theme-switcher");
+var container = document.querySelector(".container");
+var mode = "dark";
+
+themeSwitcher.addEventListener("click", function() {
+if (mode === "dark") {
+mode = "light";
+container.setAttribute("class", "light");
+}
+else {
+mode = "dark";
+container.setAttribute("class", "dark");
+}
+});
+
+</script>    
+</body>
+
+</html>

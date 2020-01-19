@@ -1,0 +1,56 @@
+body {
+    background-image: url(./images/repeated-square.png);
+}
+
+.jumbotron {
+    background-color: lightgrey;
+  width: 800px;
+  border: 5px solid black;
+  padding: 50px;
+  margin: 20px;
+  position: relative;
+  left: 550px;
+  top: 200px;
+}
+
+.copybtn {
+    margin-bottom: 20px;
+    line-height: .75;
+    padding-top: 10px;
+    border-radius: 10PX;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: rgb(102, 99, 87);
+    width: 50%;
+    color: rgb(102, 99, 87);
+    float: left;
+    height: 38px;
+}
+
+.genbtn{
+    margin-bottom: 20px;
+    line-height: .75;
+    padding-top: 10px;
+    border-radius: 10PX;
+    background-color: white;
+    border: none;
+    border-bottom: solid;
+    border-right: solid;
+    border-color: rgb(102, 99, 87);
+    width: 50%;
+    color: rgb(102, 99, 87);
+    float: right;
+    height: 38px;
+}
+
+.output {
+    height: 25px;
+    border-radius: 5px;
+    display: block;
+    padding-bottom: 2px;
+    width: 200px;
+
+}
+
